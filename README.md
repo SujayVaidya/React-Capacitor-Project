@@ -1,54 +1,124 @@
-# React + TypeScript + Vite
+# Card Swiper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mobile-first, Tinder-style card swiping prototype built with React, TypeScript, Tailwind CSS, and Capacitor for Android.
 
-Currently, two official plugins are available:
+## 🔍 Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Card Swiper Demo](https://cart-swiper.netlify.app/)
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **Tinder-like swiping**: Swipe cards left (pass), right (like), or up (add to cart).
+* **3-card stack**: Always shows the next two cards underneath as outlines.
+* **Visual feedback**: Fading icons (❤, ✖, 🛒) indicate the current action axis.
+* **Action tracking**: Maintains lists of liked, disliked, and cart items.
+* **Modals**: View liked/disliked and cart items in pop-up modals.
+* **Completion overlay**: When all products are reviewed, shows a completion message and a refresh button.
+* **Android build**: Wrapped with Capacitor.js, ready to generate an APK.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📂 Project Structure
+
+```
+├── android/                # Capacitor-generated Android project
+├── dist/                   # Production build output (Vite)
+├── src/
+│   ├── components/
+│   │   ├── CardStack.tsx   # Swipe logic & 3-card stack
+│   │   ├── ProductCard.tsx # Product card UI
+│   │   └── Modal.tsx       # Reusable modal component
+│   ├── data/
+│   │   └── products.ts     # Mock product data array
+│   ├── App.tsx             # Layout, state management & modals
+│   ├── main.tsx            # React entry point
+│   └── index.css           # Tailwind CSS imports
+├── capacitor.config.ts     # Capacitor configuration
+├── tailwind.config.cjs     # Tailwind setup
+├── vite.config.ts          # Vite configuration
+├── package.json            # Scripts & dependencies
+└── README.md               # << You are here >>
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 💻 Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* **Framework**: React 18 + TypeScript 5
+* **Bundler**: Vite 4
+* **Styling**: Tailwind CSS 3
+* **Mobile Wrapper**: Capacitor.js (Android)
+* **Icons**: lucide-react
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🚀 Getting Started
+
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/yourusername/card-swiper.git
+   cd card-swiper
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start dev server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   Navigate to `http://localhost:5173` (auto-opens). Toggle mobile view to test swiping.
+
+## 📱 Android Build
+
+1. **Build web assets**
+
+   ```bash
+   npm run build
+   ```
+
+2. **Sync with Capacitor**
+
+   ```bash
+   npx cap add android    # if not already added once
+   npx cap sync android
+   ```
+
+3. **Open Android Studio**
+
+   ```bash
+   npx cap open android
+   ```
+
+4. **Run on Emulator or Device**
+
+   * In Android Studio, select your AVD or physical device.
+   * **Build** → **Build APK(s)** → **Build APK(s)**.
+   * Locate `android/app/build/outputs/apk/debug/app-debug.apk` and install.
+
+## 📜 Usage
+
+* **Swipe Right**: Like (adds to Liked list).
+* **Swipe Left**: Pass (adds to Disliked list).
+* **Swipe Up**: Add to Cart.
+* **Cart** button: View all added-to-cart items.
+* **Details** button: View liked vs. disliked items.
+* **Refresh**: Reload page to restart when you’ve reviewed all products.
+
+## 🌟 Contributing
+
+Contributions are welcome! Feel free to:
+
+* File issues for bugs or feature requests.
+* Submit pull requests for enhancements.
+
+Please follow standard GitHub flow and ensure code quality and formatting.
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+*Happy swiping!*
