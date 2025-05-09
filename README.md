@@ -106,20 +106,6 @@ Live Demo: https://cart-swiper.netlify.app/
 * **Cart** button: View all added-to-cart items.
 * **Details** button: View liked vs. disliked items.
 * **Refresh**: Reload page to restart when you’ve reviewed all products.
-
-## 🌟 Contributing
-
-Contributions are welcome! Feel free to:
-
-* File issues for bugs or feature requests.
-* Submit pull requests for enhancements.
-
-Please follow standard GitHub flow and ensure code quality and formatting.
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ---
 
 *Happy swiping!*
