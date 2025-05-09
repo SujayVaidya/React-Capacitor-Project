@@ -5,8 +5,8 @@ A mobile-first, Tinder-style card swiping prototype built with React, TypeScript
 ## 🔍 Demo
 
 Live Demo: https://cart-swiper.netlify.app/
-
-
+Loom : http://loom.com/share/9a083b191f4c4a6d9bc64c656e480f7cgi
+Android App : https://drive.google.com/file/d/1LB5wmG_NLaIBUp_HDMBlXHpRf7UeJl7-/view?usp=sharing
 ## 🚀 Features
 
 * **Tinder-like swiping**: Swipe cards left (pass), right (like), or up (add to cart).
